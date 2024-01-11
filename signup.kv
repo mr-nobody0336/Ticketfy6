@@ -1,0 +1,174 @@
+MDScreen:
+    name: "signup"
+    MDFloatLayout:
+        md_bg_color: 0, 0, 0, 1
+
+        MDLabel:
+            text: "Ticketfy"
+            font_name: "ARLRDBD.TTF"
+            font_size: "30sp"
+            color: 1, 1, 1, 1
+            pos_hint: {"center_x": .53, "center_y": .90}
+
+        MDLabel:
+            text: "Create A New Account"
+            font_name: "FARRAY.otf"
+            font_size: "20sp"
+            color: 1, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .76}
+
+        MDFloatLayout:
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .68}
+            TextInput:
+                hint_text: "Username"
+                size_hint_y: .75
+                font_name: "ARLRDBD.TTF"
+                pos_hint: {"center_x": .49, "center_y": .4}
+                background_color: 0, 0, 0, 0
+                cursor_color: 1, 0, 0, 1
+                cusor_width: "2sp"
+                foreground_color: 1, 0, 0, 1
+                font_size: "17sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": .0}
+                size_hint_y: .03
+                md_bg_color: 1, 0, 0, 1
+
+        MDFloatLayout:
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .58}
+            TextInput:
+                hint_text: "Email"
+                size_hint_y: .75
+                font_name: "ARLRDBD.TTF"
+                pos_hint: {"center_x": .49, "center_y": .4}
+                background_color: 0, 0, 0, 0
+                cursor_color: 1, 0, 0, 1
+                cusor_width: "2sp"
+                foreground_color: 1, 0, 0, 1
+                font_size: "17sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": .0}
+                size_hint_y: .03
+                md_bg_color: 1, 0, 0, 1
+        
+        MDFloatLayout:
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .48}
+            TextInput:
+                hint_text: "Password"
+                size_hint_y: .75
+                font_name: "ARLRDBD.TTF"
+                pos_hint: {"center_x": .49, "center_y": .4}
+                background_color: 0, 0, 0, 0
+                cursor_color: 1, 0, 0, 1
+                cusor_width: "2sp"
+                foreground_color: 1, 0, 0, 1
+                font_size: "17sp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": .0}
+                size_hint_y: .03
+                md_bg_color: 1, 0, 0, 1
+
+        MDFloatLayout:
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .38}
+            TextInput:
+                hint_text: "Confirm Password"
+                size_hint_y: .75
+                font_name: "ARLRDBD.TTF"
+                pos_hint: {"center_x": .49, "center_y": .4}
+                background_color: 0, 0, 0, 0
+                cursor_color: 1, 0, 0, 1
+                cusor_width: "2sp"
+                foreground_color: 1, 0, 0, 1
+                font_size: "17sp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": .0}
+                size_hint_y: .03
+                md_bg_color: 1, 0, 0, 1
+
+        Button:
+            text: "SIGNUP"
+            background_color: 0, 0, 0, 0
+            font_name: "ARLRDBD.TTF"
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .19}
+            canvas.before:
+                Color:
+                    rgb: 1, 0, 0, 1
+                RoundedRectangle
+                    size: self.size
+                    pos: self.pos
+                    radius: [2]
+
+
+        MDLabel:
+            text: "OR"
+            font_name: "ARLRDBD.TTF"
+            font_size: "12sp"
+            color: 1, 1, 1, 1
+            halign: "center"
+            pos_hint: {"center_y": .11}
+
+        MDFloatLayout:
+            pos_hint: {"center_x": .3, "center_y": .11}
+            size_hint: .3, .002
+            md_bg_color: 1, 0, 0, 1
+
+        MDFloatLayout:
+            pos_hint: {"center_x": .7, "center_y": .11}
+            size_hint: .3, .002
+            md_bg_color: 1, 0, 0, 1
+
+        
+        MDLabel:
+            text: "Do You Have An Account?"
+            font_name: "ARLRDBD.TTF"
+            font_size: "12sp"
+            color: 1, 1, 1, 1
+            halign: "center"
+            pos_hint: {"center_x": .42, "center_y": .07}
+
+
+        MDTextButton:
+            text: "Login!"
+            font_size: "13sp"
+            pos_hint: {"center_x": .76, "center_y": .07}
+            halign: "center"
+            color: 16/255, 153/255, 222/255, 1  
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "login"  
+
+
+        MDTextButton:
+            text: "Terms & Conditions"
+            font_size: "13sp"
+            pos_hint: {"center_x": .5, "center_y": .265}
+            halign: "center"
+            color: 16/255, 153/255, 222/255, 1  
+
+        MDLabel:
+            text: "By Signing Up, I agree to the Provided"
+            font_name: "ARLRDBD.TTF"
+            font_size: "12sp"
+            color: 1, 1, 1, 1
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .305}
+ 
+
+
+
+            
+
+            
+            

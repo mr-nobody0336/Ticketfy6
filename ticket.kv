@@ -1,0 +1,22 @@
+MDScreen:
+    name: "ticket"
+    MDFloatLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.88, 0.1, 0.05, 1
+
+        Image:
+            source: "tickett1-removebg-preview.png"
+            size_hint: 1.5, 1.08
+            pos_hint: {"center_x": .545, "center_y": .515}
+            allow_stretch: True
+            keep_ratio: False
+        MDIconButton:
+            icon: "chevron-left"
+            theme_icon_color: "Custom"
+            icon_color: 0, 0, 0, 1
+            pos_hint: {"center_y": .95, "center_x": .1}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "home"
+
+        

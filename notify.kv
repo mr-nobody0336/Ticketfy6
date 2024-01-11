@@ -1,0 +1,54 @@
+MDScreen:
+    name: 'notify'
+    MDFloatLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.88, 0.1, 0.05, 1
+        size_hint_y: None 
+        height: dp(70)
+        pos_hint: {'top': 1}
+        MDLabel:
+            text: "Notifications"
+            font_name: "ARLRDBD.TTF"
+            font_size: "17sp"
+            color: 1, 1, 1, 1
+            size_hint_x: .7
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDIconButton:
+            icon: "chevron-left"
+            theme_icon_color: "Custom"
+            icon_color: 1, 1, 1, 1
+            pos_hint: {"center_y": .5, "center_x": .1}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "home"
+
+    MDFloatLayout:
+        orientation: 'vertical'
+        md_bg_color: 1, 1, 1, 1
+        size_hint_y: .9
+
+        ScrollView:
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                MDList:
+                    id: list
+
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: dp(50)
+                        md_bg_color: 1, 1, 1, 1
+                        padding: [8]
+
+
+                        MDLabel:
+                            text: "POPULAR"
+                            font_name: "FARRAY.otf"
+                            font_size: "15sp"
+                            color: 0, 0, 0, 1
+                            size_hint_x: None

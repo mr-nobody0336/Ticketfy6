@@ -1,0 +1,76 @@
+<Info>:
+    id: add_event
+    size_hint_y: None
+    height: 400
+    pos_hint: {"center_x": .5, "center_y": .8}
+    MDTextField:
+        hint_text: 'Event Title'
+        pos_hint: {"center_x": .5, "center_y": .65}
+
+    MDTextField:
+        hint_text: 'Host'
+        pos_hint: {"center_x": .5, "center_y": .5}
+
+    MDTextField:
+        hint_text: 'Venue'
+        pos_hint: {"center_x": .5, "center_y": .35}
+
+    MDLabel:
+        text: "Date"
+        font_name: "ARLRDBD.TTF"
+        font_size: "17sp"
+        color: 0.7, 0.7, 0.7, 1
+        size_hint_x: .7
+        halign: "center"
+        pos_hint: {"center_x": .1, "center_y": .2}
+
+    MDLabel:
+        id: event_date
+        text: ""
+        font_name: "ARLRDBD.TTF"
+        font_size: "17sp"
+        color: 0.7, 0.7, 0.7, 1
+        size_hint_x: .7
+        halign: "center"
+        pos_hint: {"center_x": .5, "center_y": .2}
+
+    MDIconButton:
+        icon: "calendar-outline"
+        theme_icon_color: "Custom"
+        icon_color: 0.8, 0.8, 0.8, 1
+        pos_hint: {"center_x": .9, "center_y": .2}
+        on_release: app.date_picker()
+
+
+    MDLabel:
+        text: "Time"
+        font_name: "ARLRDBD.TTF"
+        font_size: "17sp"
+        color: 0.7, 0.7, 0.7, 1
+        size_hint_x: .7
+        halign: "center"
+        pos_hint: {"center_x": .1, "center_y": .10}
+
+    MDLabel:
+        id: event_date
+        text: ""
+        font_name: "ARLRDBD.TTF"
+        font_size: "17sp"
+        color: 0.7, 0.7, 0.7, 1
+        size_hint_x: .7
+        halign: "center"
+        pos_hint: {"center_x": .5, "center_y": .10}
+
+    MDIconButton:
+        icon: "clock-time-four-outline"
+        theme_icon_color: "Custom"
+        icon_color: 0.8, 0.8, 0.8, 1
+        pos_hint: {"center_x": .9, "center_y": .10}
+        on_release: app.time_picker()
+
+    MDTextField:
+        hint_text: 'Price(₦)'
+        pos_hint: {"center_x": .5, "center_y": .0}
+    
+
+

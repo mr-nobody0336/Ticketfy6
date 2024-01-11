@@ -1,0 +1,71 @@
+MDScreen:
+    name: "service"
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.2, 0.2, 0.2, 1
+
+
+        MDFloatLayout:
+            orientation: 'vertical'
+            md_bg_color: 0.88, 0.1, 0.05, 1
+            size_hint_y: None 
+            height: dp(70)
+            pos_hint: {'top': 1}
+            MDLabel:
+                text: "Contact Us"
+                font_name: "ARLRDBD.TTF"
+                font_size: "17sp"
+                color: 1, 1, 1, 1
+                size_hint_x: .7
+                halign: "center"
+                pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDIconButton:
+                icon: "chevron-left"
+                theme_icon_color: "Custom"
+                icon_color: 1, 1, 1, 1
+                pos_hint: {"center_y": .5, "center_x": .1}
+                on_release:
+                    root.manager.transition.direction = "right"
+                    root.manager.current = "home"
+
+        MDFloatLayout:
+            orientation: 'vertical'
+            md_bg_color: 1, 1, 1, 1
+            size_hint_y: .9
+            Image:
+                source: "whatsapp-removebg-preview (1).png"
+                size_hint: .65, .65
+                pos_hint: {"center_x": .5, "center_y": .7}
+
+            MDLabel:
+                text: "Need Any Help?"
+                font_name: "ARLRDBD.TTF"
+                font_size: "27sp"
+                color: 0, 0, 0, 1
+                size_hint_x: .7
+                pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDLabel:
+                text: "Our 24/7 customer care service is always ready to settle your needs. Reach out to us on Whatsapp"
+                font_name: "ARLRDBD.TTF"
+                font_size: "17sp"
+                color: 0, 0, 0, 1
+                size_hint_x: .7
+                pos_hint: {"center_x": .5, "center_y": .4}
+
+            Button:
+                text: "Chat With Us"
+                background_color: 0, 0, 0, 0
+                font_name: "ARLRDBD.TTF"
+                size_hint: .5, .08
+                pos_hint: {"center_x": .5, "center_y": .25}
+                on_release: app.open_link("https://wa.link/4xp3x5")
+                canvas.before:
+                    Color:
+                        rgb: 1, 0, 0, 1
+                    RoundedRectangle
+                        size: self.size
+                        pos: self.pos
+                        radius: [10]
+            

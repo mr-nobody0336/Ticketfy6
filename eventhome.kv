@@ -1,0 +1,158 @@
+MDScreen:
+    name: "eventhome"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDFloatLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: dp(250)
+            md_bg_color: 1, 1, 1, 1
+            pos_hint: {"center_x": .5, "center_y": .75}
+
+
+            MDCard:
+                radius: [10]
+                size_hint_x: 0.9  
+                pos_hint: {"center_x": .5, "center_y": .5}
+                md_bg_color: 0.9, 0.9, 0.9, 1
+
+                FitImage:
+                    source: "IMG-20240103-WA0033.jpg"
+                    size_hint_y: 1
+                    pos_hint: {"top": 1}
+                    radius: 10, 10, 10, 10
+
+        MDIconButton:
+            icon: "chevron-left"
+            theme_icon_color: "Custom"
+            icon_color: 0, 0, 0, 1
+            pos_hint: {"center_y": .95, "center_x": .1}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "home"
+
+        MDLabel:
+            text: "TITLE:"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .15, "center_y": .5}
+
+        MDLabel:
+            text: "Sir Angle Party"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDLabel:
+            text: "VENUE:"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .15, "center_y": .45}
+
+        MDLabel:
+            text: "Bukateria"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .45}
+
+        MDLabel:
+            text: "DATE:"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .15, "center_y": .4}
+
+        MDLabel:
+            text: "14/2/2024"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .4}
+
+        MDLabel:
+            text: "TIME:"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .15, "center_y": .35}
+
+        MDLabel:
+            text: "8pm"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .35}
+
+        MDLabel:
+            text: "PRICE:"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .15, "center_y": .3}
+
+        MDLabel:
+            text: "$50"
+            font_name: "ARLRDBD.TTF"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .3}
+
+        MDLabel:
+            text: "no sold:"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .18, "center_y": .25}
+
+        MDLabel:
+            text: "1,000 units"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .55, "center_y": .25}
+
+        MDLabel:
+            text: "revenue:"
+            font_name: "FARRAY.otf"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .18, "center_y": .2}
+
+        MDLabel:
+            text: "$50,000"
+            font_name: "ARLRDBD.TTF"
+            font_size: "15sp"
+            color: 0, 0, 0, 1
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .2}
+
+        Button:
+            text: "Delete"
+            background_color: 0, 0, 0, 0
+            font_name: "ARLRDBD.TTF"
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .1}
+            canvas.before:
+                Color:
+                    rgb: 1, 0, 0, 1
+                RoundedRectangle
+                    size: self.size
+                    pos: self.pos
+                    radius: [12]

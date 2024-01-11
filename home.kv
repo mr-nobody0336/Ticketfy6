@@ -1,0 +1,646 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+MDScreen:
+    name: "home"    
+    
+    ScreenManager:
+        id:scr
+        transition: NoTransition()
+        transition_duration: 0
+    
+        
+        MDScreen:
+            name: "event"
+            MDFloatLayout:
+                orientation: 'vertical'
+                md_bg_color: 1, 1, 1, 1
+                radius: [0, 0, 25, 25]
+                size_hint_y: .9
+
+                ScrollView:
+
+                    GridLayout:
+                        cols: 1
+                        size_hint_y: None
+                        height: self.minimum_height
+                        MDList:
+                            id: list
+
+
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(50)
+                                md_bg_color: 1, 1, 1, 1
+
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(50)
+                                md_bg_color: 1, 1, 1, 1
+                                padding: [8]
+
+
+                                MDLabel:
+                                    text: "POPULAR"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "15sp"
+                                    color: 0, 0, 0, 1
+                                    size_hint_x: None
+                                    
+
+                                MDIcon:
+                                    icon: "fire"
+                                    size_hint: None, None
+                                    size: dp(24), dp(24)  # Set icon size
+                                    pos_hint: {"center_y": .5}  # Adjust vertical position
+                                    theme_text_color: "Custom"
+                                    text_color: 1, 0, 0, 1
+                                    size_hint_x: .05
+
+                                
+
+                            MDFloatLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(250)
+                                md_bg_color: 1, 1, 1, 1
+
+
+                                MDCard:
+                                    radius: [10]
+                                    size_hint_x: 0.9  
+                                    pos_hint: {"center_x": .5, "center_y": .5}
+                                    md_bg_color: 0.9, 0.9, 0.9, 1
+
+                                    FitImage:
+                                        source: "IMG-20240103-WA0033.jpg"
+                                        size_hint_y: 1
+                                        pos_hint: {"top": 1}
+                                        radius: 10, 10, 10, 10
+
+                                
+
+
+                        MDList:
+                            id: list2
+
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(50)
+                                md_bg_color: 1, 1, 1, 1
+                                padding: [8]
+
+                                MDLabel:
+                                    text: "UPCOMING EVENTS"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "15sp"
+                                    color: 0, 0, 0, 1
+                                    size_hint_x: .7
+
+                        
+
+
+
+
+#============================================= last box layout so that the last option can be reached ==========================================
+
+                        MDBoxLayout:
+                            orientation: 'horizontal'
+                            size_hint_y: None
+                            height: dp(50)
+                            md_bg_color: 1, 1, 1, 1
+
+
+#===============================================================================================================================================
+
+
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                md_bg_color: 0.88, 0.1, 0.05, 1
+                size_hint_y: None 
+                height: dp(120)
+                pos_hint: {'top': 1}
+                radius: [0, 0, 15, 15]
+
+            MDIconButton:
+                icon: "cart-variant"
+                pos_hint: {"center_x": .92, "center_y": .95}
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "cart"
+
+            MDLabel:
+                text: "HELLO USER!"
+                font_name: "FARRAY.otf"
+                font_size: "15sp"
+                color: 1, 1, 1, 1
+                halign: "center"
+                pos_hint: {"center_x": .5, "center_y": .95}
+
+            MDIconButton:
+                icon: "bell"
+                pos_hint: {"center_x": .12, "center_y": .95}
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "notify"
+
+                
+
+            MDFloatLayout:
+                size_hint: .79, .08
+                pos_hint: {"center_x": .5, "center_y": .87}
+
+                TextInput:
+                    hint_text: "Search"
+                    size_hint_y: .75
+                    font_name: "ARLRDBD.TTF"
+                    pos_hint: {"center_x": .49, "center_y": .4}
+                    background_color: 0, 0, 0, 0
+                    cursor_color: 1, 1, 1, 1
+                    cusor_width: "2sp"
+                    foreground_color: 1, 1, 1, 1
+                    font_size: "17sp"
+                    multiline: False
+
+                    
+                MDFloatLayout:
+                    pos_hint: {"center_x": .5, "center_y": .0}
+                    size_hint_y: .03
+                    md_bg_color: 1, 1, 1, 1
+
+
+                MDIconButton:
+                    icon: "magnify"
+                    pos_hint: {"center_x": .95, "center_y": .4}
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+
+
+#======================================================================== Other screens ==============================================================
+
+
+        MDScreen:
+            name: "ticket"
+            MDFloatLayout:
+                orientation: 'vertical'
+                md_bg_color: 0.88, 0.1, 0.05, 1
+                size_hint_y: None 
+                height: dp(70)
+                pos_hint: {'top': 1}
+                MDLabel:
+                    text: "Tickets"
+                    font_name: "ARLRDBD.TTF"
+                    font_size: "17sp"
+                    color: 1, 1, 1, 1
+                    size_hint_x: .7
+                    halign: "center"
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    md_bg_color: 1, 1, 1, 1
+                    radius: [0, 0, 25, 25]
+                    size_hint_y: .9
+            MDFloatLayout:
+                orientation: 'vertical'
+                md_bg_color: 1, 1, 1, 1
+                size_hint_y: .9
+
+                ScrollView:
+
+                    GridLayout:
+                        cols: 1
+                        size_hint_y: None
+                        height: self.minimum_height
+                        MDList:
+                            id: list
+
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(50)
+                                md_bg_color: 1, 1, 1, 1
+                                padding: [8]
+
+
+                                MDLabel:
+                                    text: "POPULAR"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "15sp"
+                                    color: 0, 0, 0, 1
+                                    size_hint_x: None
+                        MDList:    
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(50)
+                                md_bg_color: 1, 1, 1, 1
+            
+        MDScreen:
+            name: "booking"
+            MDFloatLayout:
+                orientation: 'vertical'
+                md_bg_color: 0.88, 0.1, 0.05, 1
+                size_hint_y: None 
+                height: dp(70)
+                pos_hint: {'top': 1}
+                MDLabel:
+                    text: "Events"
+                    font_name: "ARLRDBD.TTF"
+                    font_size: "17sp"
+                    color: 1, 1, 1, 1
+                    size_hint_x: .7
+                    halign: "center"
+                    pos_hint: {"center_x": .5, "center_y": .5}
+
+                MDIconButton:
+                    icon: "calendar-plus-outline"
+                    theme_icon_color: "Custom"
+                    icon_color: 1, 1, 1, 1
+                    pos_hint: {"center_y": .5, "center_x": .88}
+                    on_release: app.open_dialog_box()
+
+
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    md_bg_color: 1, 1, 1, 1
+                    radius: [0, 0, 25, 25]
+                    size_hint_y: .9
+
+            MDFloatLayout:
+                orientation: 'vertical'
+                md_bg_color: 1, 1, 1, 1
+                size_hint_y: .9
+
+                ScrollView:
+
+                    GridLayout:
+                        cols: 1
+                        size_hint_y: None
+                        height: self.minimum_height
+                        MDList:
+                            id: list
+
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(50)
+                                md_bg_color: 1, 1, 1, 1
+                                padding: [8]
+
+
+                                MDLabel:
+                                    text: "POPULAR"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "15sp"
+                                    color: 0, 0, 0, 1
+                                    size_hint_x: None
+                        MDList:    
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(50)
+                                md_bg_color: 1, 1, 1, 1
+
+        MDScreen:
+            name: "user"
+            MDFloatLayout:
+                orientation: 'vertical'
+                md_bg_color: 1, 1, 1, 1
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    md_bg_color: 0.88, 0.1, 0.05, 1
+                    size_hint_y: None 
+                    height: dp(130)
+                    pos_hint: {'top': 1}
+                    radius: [0, 0, 30, 30]
+
+                                      
+                MDLabel:
+                    text: "Personal Info"
+                    font_name: "ARLRDBD.TTF"
+                    font_size: "20sp"
+                    color: 1, 1, 1, 1
+                    halign: "center"
+                    pos_hint: {"center_y": .98}
+
+                
+                MDCard:
+                    radius: [10, 10, 30, 10]
+                    size_hint: 0.7, 0.15  
+                    pos_hint: {"center_x": .63, "center_y": .87}
+                    md_bg_color: 1, 1, 1, 1
+                    MDLabel:
+                        text: "Available Balance:"
+                        font_name: "ARLRDBD.TTF"
+                        font_size: "15sp"
+                        color: 0, 0, 0, 1
+                        halign: "center"
+                        pos_hint: {"center_y": .9}
+
+                MDLabel:
+                    text: "$50,000"
+                    font_name: "ARLRDBD.TTF"
+                    font_size: "15sp"
+                    color: 0, 0, 0, 1
+                    halign: "center"
+                    pos_hint: {"center_y": .89, "center_x": .63}
+                MDFloatLayout:
+                    size_hint_x: .2
+                    size_hint_y: .1
+                    pos_hint: {"center_x": .15, "center_y": .9}
+                    canvas:
+                        Color:
+                            rgb: (1, 1, 1, 1)
+                        Ellipse:
+                            size: self.size
+                            pos: self.pos
+                            source: "woman-6787784_1920.png"
+                MDIconButton:
+                    icon: "bank-transfer-in"
+                    theme_icon_color: "Custom"
+                    icon_color: 1, 0, 0, 1
+                    pos_hint: {"center_y": .84, "center_x": .8}
+
+                MDIconButton:
+                    icon: "bank-transfer-out"
+                    theme_icon_color: "Custom"
+                    icon_color: 0, 0, 0, 1
+                    pos_hint: {"center_y": .84, "center_x": .435}
+                MDLabel:
+                    text: "Withdraw"
+                    font_size: "10sp"
+                    halign: "center"
+                    color: 0, 0, 0, 1
+                    pos_hint: {"center_y": .81, "center_x": .44}
+                MDLabel:
+                    text: "Add Money"
+                    font_size: "10sp"
+                    color: 1, 0, 0, 1
+                    halign: "center"
+                    pos_hint: {"center_y": .81, "center_x": .825}
+
+ 
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    md_bg_color: 1, 1, 1, 1
+                    size_hint_y: None 
+                    height: dp(470)
+                    ScrollView:
+                        MDList:
+                            id: list
+                            User:
+
+                                MDIcon:
+                                    icon: "face-man-outline"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .08}
+                                MDLabel:
+                                    text: "Account"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "13sp"
+                                    color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .64}
+                                MDIconButton:
+                                    icon: "chevron-right"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .85}
+                                    on_release:
+                                        root.manager.transition.direction = "left"
+                                        root.manager.current = "account"
+
+                            User:
+
+                                MDIcon:
+                                    icon: "credit-card-outline"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .08}
+                                MDLabel:
+                                    text: "Bank Details"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "13sp"
+                                    color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .64}
+                                MDIconButton:
+                                    icon: "chevron-right"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .85}
+                                    on_release:
+                                        root.manager.transition.direction = "left"
+                                        root.manager.current = "bank"
+
+                            User:
+                                MDIcon:
+                                    icon: "comment-alert-outline"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .08}
+                                MDLabel:
+                                    text: "Report Scam"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "13sp"
+                                    color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .64}
+                                MDIconButton:
+                                    icon: "chevron-right"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .85}
+
+                            User:
+                                MDIcon:
+                                    icon: "face-agent"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .08}
+                                MDLabel:
+                                    text: "Customer Service"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "13sp"
+                                    color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .64}
+                                MDIconButton:
+                                    icon: "chevron-right"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .85}
+                                    on_release:
+                                        root.manager.transition.direction = "left"
+                                        root.manager.current = "service"
+
+
+                            User:
+                                MDIcon:
+                                    icon: "plus-box-outline"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .08}
+                                MDLabel:
+                                    text: "Follow us"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "13sp"
+                                    color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .64}
+                                MDIconButton:
+                                    icon: "chevron-right"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .85}
+
+
+
+                            User:
+
+                                MDIcon:
+                                    icon: "comment-question-outline"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .08}
+                                MDLabel:
+                                    text: "About Ticketfy"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "13sp"
+                                    color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .64}
+
+                                MDIconButton:
+                                    icon: "chevron-right"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .85}
+                                    
+
+
+                            User:
+
+                                MDIcon:
+                                    icon: "inbox-full-outline"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .08}
+                                MDLabel:
+                                    text: "Referral"
+                                    font_name: "FARRAY.otf"
+                                    font_size: "13sp"
+                                    color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .64}
+
+                                MDIconButton:
+                                    icon: "chevron-right"
+                                    theme_icon_color: "Custom"
+                                    icon_color: 0, 0, 0, 1
+                                    pos_hint: {"center_y": .5, "center_x": .85}
+
+
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(50)
+                                md_bg_color: 1, 1, 1, 1
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint_y: None
+                                height: dp(50)
+                                md_bg_color: 1, 1, 1, 1
+
+
+
+
+
+
+#===============================================================================================================================================                    
+
+                
+
+
+#======================================================================== Navigtion =============================================================
+
+    MDBottomNavigation:
+        size_hint: 1, .1
+        pos_hint:{'center_x': .5,'center_y': .05}
+        panel_color: 1, 1, 1, 1
+
+        MDBottomNavigationItem:
+            id: nav1
+            icon: 'home-outline'
+            on_tab_press:
+                scr.current = "event"
+        
+        MDBottomNavigationItem:
+            id: nav2
+            icon: 'ticket-confirmation-outline'
+            on_tab_press:
+                scr.current = "ticket"
+            
+        
+
+        MDBottomNavigationItem:
+            id: nav3
+            icon: 'calendar-clock-outline'
+            on_tab_press:
+                scr.current = "booking"
+
+        MDBottomNavigationItem:
+            id: nav4
+            icon: 'account-circle-outline'
+            on_tab_press:
+                scr.current = "user"
+        
+            
+#================================================================================================================================================
+
+<Element@MDBoxLayout>:
+    orientation: 'horizontal'
+    size_hint_y: None
+    height: dp(140)
+    md_bg_color: 1, 1, 1, 1
+    padding: [8]
+
+    MDCard:
+        radius: [10]
+        size_hint_y: 0.9  
+        pos_hint: {"center_x": .5, "center_y": .5}
+        md_bg_color: 0.9, 0.9, 0.9, 1
+
+        MDFloatLayout:
+            orientation: 'vertical'
+            md_bg_color: 0.9, 0.9, 0.9, 1
+            radius: [10, 10, 10, 10]
+            size_hint_x: .3
+
+            MDCard:
+                radius: [10]
+                size_hint: 0.4, 0.9  
+                pos_hint: {"center_x": .22, "center_y": .5}
+                md_bg_color: 1, 1, 1, 1
+
+                FitImage:
+                    source: ""
+                    pos_hint: {"top": 1}
+                    radius: 10, 10, 10, 10
+
+
+<User@MDFloatLayout>:
+    orientation: 'horizontal'
+    size_hint_y: None
+    height: dp(70)
+    md_bg_color: 1, 1, 1, 1
+    MDCard:
+        size_hint_y: 0.95  
+        pos_hint: {"center_x": .5, "center_y": .5}
+        md_bg_color: 0.9, 0.9, 0.9, .5
+        MDFloatLayout:
+            
