@@ -12,9 +12,6 @@ package.domain = org.test
 # (str) Source code where the main.py live
 source.dir = .
 
-# (list) Source files to include (let empty to include all the files)
-source.exclude_exts = py,png,jpg,kv,ttf
-
 # (list) List of inclusions using pattern matching
 source.include_patterns = *.kv, *.png, *.ttf, *.otf
 
@@ -38,7 +35,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = requirements = python3,kivy==2.2.1,kivymd==1.2.0,pillow
+requirements = python3,kivy==2.2.1,kivymd==1.2.0,pillow
 
 
 # (str) Custom source folders for requirements
